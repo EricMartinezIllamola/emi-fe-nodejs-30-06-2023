@@ -1,0 +1,31 @@
+<!-- views/editar.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Producto</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+
+</head>
+<body>
+  <h1>Editar Producto</h1>
+  <form action="/editar_productos/<%= producto.id %>" method="post">
+    <label for="categoria_id">Categoria ID:</label>
+    <input type="text" id="categoria_id" name="categoria_id" value="<%= producto.categoria_id %>" required>
+    <br>
+    <label for="fabricante_id">Fabricante ID:</label>
+    <input type="text" id="fabricante_id" name="fabricante_id" value="<%= producto.fabricante_id %>" required>
+    <br>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" value="<%= producto.nombre %>" required>
+    <br>
+    <label for="precio">Precio:</label>
+    <input type="text" id="precio" name="precio" value="<%= producto.precio %>" required>
+    <br>
+    <label for="stock">Stock:</label>
+    <input type="text" id="stock" name="stock" value="<%= producto.stock %>" required>
+    <br>
+    <input type="submit" value="Guardar">
+  </form>
+</body>
+</html>

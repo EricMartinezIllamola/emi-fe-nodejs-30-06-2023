@@ -1,0 +1,19 @@
+<!-- views/agregar.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar Categoria</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+
+</head>
+<body>
+  <h1>Agregar Categoria</h1>
+  <form action="/agregar_categorias" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <br>
+    <input type="submit" value="Agregar">
+  </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- views/agregar.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar Producto</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+
+</head>
+<body>
+  <h1>Agregar Producto</h1>
+  <form action="/agregar_productos" method="post">
+    <label for="categoria_id">Categoria ID:</label>
+    <input type="text" id="categoria_id" name="categoria_id" required>
+    <br>
+    <label for="fabricante_id">Fabricante ID:</label>
+    <input type="text" id="fabricante_id" name="fabricante_id" required>
+    <br>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <br>
+    <label for="precio">Precio:</label>
+    <input type="text" id="precio" name="precio" required>
+    <br>
+    <label for="stock">Stock:</label>
+    <input type="text" id="stock" name="stock" required>
+    <br>
+    <input type="submit" value="Agregar">
+
+  </form>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Filtros</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+
+</head>
+
+<body>
+    <h1>Productos con Filtros</h1>
+    <form action="/index_filtros" method="post">
+        <select name="fabricante" id="fabricante">
+            <% fabricantes.forEach(fabricante=> { %>
+            <option value="<%= fabricante.nombre %>"><%= fabricante.nombre %></option>
+            <% }) %>
+        </select> <br>
+        <select name="categoria" id="categoria">
+            <% categorias.forEach(categoria=> { %>
+            <option value="<%= categoria.nombre %>"><%= categoria.nombre %></option>
+            <% }) %>
+        </select> <br>
+        <input type="submit" value="Filtrar">
+    </form>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Fabricante</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+        <% productos.forEach(producto=> { %>
+            <tr>
+                <td>
+                    <%= producto.id %>
+                </td>
+                <td>
+                    <%= producto.categoria %>
+                </td>
+                <td>
+                    <%= producto.fabricante %>
+                </td>
+                <td>
+                    <%= producto.nombre %>
+                </td>
+                <td>
+                    <%= producto.precio %>
+                </td>
+                <td>
+                    <%= producto.stock %>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+</body>
+
+</html>

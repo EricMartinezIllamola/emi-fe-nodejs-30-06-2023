@@ -1,0 +1,63 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Productos Ordenados</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+
+</head>
+
+<body>
+    <h1>Total Productos Ordenados</h1>
+    <form action="/index_asc_desc" method="post">
+        <select name="campo" id="campo">
+            <option value="p.id">ID</option>
+            <option value="c.nombre">Categoria</option>
+            <option value="f.nombre">Fabricante</option>
+            <option value="p.nombre">Nombre</option>
+            <option value="p.precio">Precio</option>
+            <option value="p.stock">Stock</option>
+        </select>
+        <select name="orden" id="orden">
+            <option value="ASC">Ascendente</option>
+            <option value="DESC">Descendente</option>
+        </select>
+        <input type="submit" value="Ordenar">
+    </form>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Categoria</th>
+            <th>Fabricante</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+        <% productos.forEach(producto=> { %>
+            <tr>
+                <td>
+                    <%= producto.id %>
+                </td>
+                <td>
+                    <%= producto.categoria %>
+                </td>
+                <td>
+                    <%= producto.fabricante %>
+                </td>
+                <td>
+                    <%= producto.nombre %>
+                </td>
+                <td>
+                    <%= producto.precio %>
+                </td>
+                <td>
+                    <%= producto.stock %>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Productos</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+
+</head>
+
+<body>
+  <h1>Productos</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Categoria_ID</th>
+      <th>Fabricante_ID</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Stock</th>
+    </tr>
+    <% productos.forEach(producto=> { %>
+      <tr>
+        <td>
+          <%= producto.id %>
+        </td>
+        <td>
+          <%= producto.categoria_id %>
+        </td>
+        <td>
+          <%= producto.fabricante_id %>
+        </td>
+        <td>
+          <%= producto.nombre %>
+        </td>
+        <td>
+          <%= producto.precio %>
+        </td>
+        <td>
+          <%= producto.stock %>
+        </td>
+        <td>
+          <a href="/editar_productos/<%= producto.id %>">Editar</a>
+          <a href="/eliminar_productos/<%= producto.id %>">Eliminar</a>
+        </td>
+      </tr>
+      <% }) %>
+  </table>
+  <a href="/agregar_productos">Agregar producto</a>
+</body>
+
+</html>
